@@ -1,0 +1,15 @@
+* {
+  outline: none!important;
+}
+
+#app {
+  @apply w-full h-screen overflow-y-auto;
+}
+
+#main {
+  @apply p-4;
+}
+
+.container {
+  @apply mx-auto;
+}

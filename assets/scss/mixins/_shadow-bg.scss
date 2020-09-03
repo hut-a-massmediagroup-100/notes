@@ -1,0 +1,28 @@
+@mixin shadow-bg {
+  transition: all .125s ease-in-out;
+  z-index: -1;
+  content: '';
+  top: .25rem;
+  background: inherit;
+  filter: blur(.5rem);
+  @apply block absolute rounded-sm w-full h-full left-0;
+}
+
+@mixin shadow-bg-hover {
+  transition: all .125s ease-in-out;
+  z-index: -1;
+  content: '';
+  top: .5rem;
+  background: inherit;
+  filter: blur(1rem);
+  @apply block absolute rounded-sm w-full h-full left-0;
+}
+
+@mixin shadow-bg-active {
+  transition: all .125s ease-in-out;
+  z-index: -1;
+  content: '';
+  background: inherit;
+  filter: blur(.5rem);
+  @apply block absolute rounded-sm w-full h-full top-0 left-0;
+}

@@ -1,0 +1,21 @@
+$color-names: 'primary', 'secondary', 'success', 'info', 'danger', 'warning';
+
+@each $name in $color-names {
+  .bg-#{$name}-gradient {
+    transition: all .125s ease-in-out;
+    @apply bg-gradient-to-tr from-#{$name}-gr-from via-#{$name}-gr-via to-#{$name}-gr-to relative;
+    &:before {
+      @include shadow-bg;
+    }
+    &:hover {
+      &:before {
+        @include shadow-bg-hover;
+      }
+    }
+    &:active {
+      &:before {
+        @include shadow-bg-active;
+      }
+    }
+  }
+}
