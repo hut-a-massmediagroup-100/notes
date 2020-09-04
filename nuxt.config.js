@@ -67,7 +67,22 @@ export default {
     'nuxt-i18n',
     '@nuxtjs/svg-sprite',
     "vue-toastification/nuxt",
+    '@nuxtjs/firebase'
   ],
+  firebase: {
+    config: {
+      apiKey: 'AIzaSyApRq7pYI0XVYuSEtU5vkCJesuhP3ZOovw',
+      authDomain: 'notes-mmg.firebaseapp.com',
+      databaseURL: 'https://notes-mmg.firebaseio.com',
+      projectId: 'notes-mmg',
+      storageBucket: 'notes-mmg.appspot.com',
+      messagingSenderId: '896204620585',
+      appId: '1:896204620585:web:c70430606f32d4ce8d2d38'
+    },
+    services: {
+      firestore: true
+    }
+  },
   tailwindcss: {
     exposeConfig: true
   },
