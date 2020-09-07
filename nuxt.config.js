@@ -133,6 +133,16 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    babel: {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      presets({ isServer }) {
+        return [
+          [
+            "@nuxt/babel-preset-app", { loose: true }
+          ]
+        ]
+      }
+    },
     extend(config, ctx) {
       if (ctx.isDev && ctx.isClient) {
         config.devtool = 'source-map';
