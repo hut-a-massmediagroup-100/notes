@@ -1,18 +1,32 @@
 <template>
-  <main id="main">{{ $t('titles.title') }}</main>
+  <main id="main">
+    <ul>
+      <card-item v-for="(item, index) in items" :key="index" :data="item"/>
+    </ul>
+  </main>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
+import { Context } from '@nuxt/types'
+import CardItem from '@/domains/notes/components/card.vue'
+import { NoteType } from '@/domains/notes/types/note'
 
-@Component
+@Component({
+  components: {
+    CardItem
+  }
+})
 export default class Index extends Vue {
-  async asyncData(ctx: any) {
+  async asyncData({ $fireStore }: Context) {
     try {
-      const response = await ctx.$fireStore.collection('test').get()
-      const items: {}[] = []
+      const response = await $fireStore.collection('test').get()
+      const items: NoteType[] = []
       response.docs.map((item: any) => {
-        items.push(item.data())
+        items.push({
+          ...item.data(),
+          id: item.id
+        })
       })
       return {
         items

@@ -41,11 +41,6 @@ export default {
    */
   plugins: [],
   /*
-   ** Auto import components
-   ** See https://nuxtjs.org/api/configuration-components
-   */
-  components: true,
-  /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
@@ -62,8 +57,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
     'nuxt-i18n',
     '@nuxtjs/svg-sprite',
     "vue-toastification/nuxt",
@@ -123,11 +116,6 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
-  /*
-   ** Content module configuration
-   ** See https://content.nuxtjs.org/configuration
-   */
-  content: {},
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
